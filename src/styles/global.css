@@ -3,22 +3,29 @@
 
 @theme {
   /* Primary */
-  --color-Primary-Light-red-CTA-text: hsl(356, 100%, 66%);
-  --color-Primary-Very-light-red-CTA-hover-background: hsl(355, 100%, 74%);
-  --color-Primary-Very-dark-blue-headings: hsl(208, 49%, 24%);
+  --color-Primary-headings: hsl(208, 49%, 24%);
+  --color-Primary-paragraphs: hsl(207, 13%, 34%);
 
-  /* Neutral */
-  --color-Neutral-White-text: hsl(0, 0%, 100%);
-  --color-Neutral-Grayish-blue-footer-text: hsl(240, 2%, 79%);
-  --color-Neutral-Very-dark-grayish-blue-body-copy: hsl(207, 13%, 34%);
-  --color-Neutral-Very-dark-black-blue-footer-background: hsl(240, 10%, 16%);
+  /* Accent */
+  --color-Accent-button-text: hsl(356, 100%, 66%);
+
+  /* Action */
+  --color-Action-hover: hsl(355, 100%, 74%);
+
+  /* Menu */
+  --color-Menu-text: hsl(207, 13%, 34%);
+
+  /* Footer */
+  --color-Footer-title: #fff;
+  --color-Footer-link: hsl(240, 2%, 79%);
+  --color-Footer-background: hsl(240, 10%, 16%);
 
   /* Gradient */
-  --color-Gradient-Header-Very-light-red: hsl(13, 100%, 72%);
-  --color-Gradient-Header-Light-red: hsl(353, 100%, 62%);
+  --color-Gradient-Header-from: hsl(13, 100%, 72%);
+  --color-Gradient-Header-to: hsl(353, 100%, 62%);
 
-  --color-Gradient-Body-Very-dark-gray-blue: hsl(237, 17%, 21%);
-  --color-Gradient-Body-Very-dark-desaturated-blue: hsl(237, 23%, 32%);
+  --color-Gradient-Body-from: hsl(237, 17%, 21%);
+  --color-Gradient-Body-to: hsl(237, 23%, 32%);
 
   /* FONTS */
 
@@ -32,4 +39,7 @@
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
+
+  /* Borders */
+  --radius-5xl: 5rem;
 }
