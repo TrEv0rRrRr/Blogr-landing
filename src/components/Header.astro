@@ -1,0 +1,52 @@
+---
+const mobilePattern = "url(/bg-images/bg-pattern-intro-mobile.svg)";
+const gradientColors =
+  "linear-gradient(to bottom, hsl(13, 100%, 72%), hsl(353, 100%, 62%))";
+---
+
+<header
+  class="flex flex-col justify-center text-white gap-20 pt-5 px-8 pb-32 rounded-bl-5xl bg-no-repeat bg-center bg-cover"
+  style={`background-image: ${mobilePattern}, ${gradientColors}; background-size: 340%; background-position: -20rem, center;`}
+>
+  <div class="flex justify-between items-center">
+    <img src="/logo.svg" alt="Blogr's logo" class="object-contain w-20 h-20" />
+    <img
+      src="src/assets/icon-hamburger.svg"
+      alt="Open Menu"
+      class="cursor-pointer"
+    />
+  </div>
+  <div class="flex flex-col items-center justify-center gap-10">
+    <div class="flex flex-col text-center gap-4">
+      <h1 class="font-semibold text-3xl px-6">A modern publishing platform</h1>
+      <p class="font-light px-10">
+        Grow your audience and build your online brand
+      </p>
+    </div>
+    <div class="flex items-center gap-5 font-semibold">
+      <button
+        class="cursor-pointer border border-white rounded-4xl px-5 py-2 text-Accent-button-text bg-white hover:bg-Action-hover hover:border-Action-hover hover:text-white transition-all"
+        >Start for Free</button
+      >
+      <button
+        class="cursor-pointer border border-white rounded-4xl px-5 py-2 bg-transparent hover:bg-white hover:text-Action-hover transition-all"
+        >Learn More</button
+      >
+    </div>
+  </div>
+</header>
+
+<style>
+  @media (min-width: 1280px) {
+    header {
+      background-image: linear-gradient(
+          to bottom,
+          var(--color-Gradient-Header-from),
+          var(--color-Gradient-Header-to)
+        ),
+        url(/bg-images/bg-pattern-intro-desktop.svg);
+      background-size: 320%, cover;
+      background-position: center, center;
+    }
+  }
+</style>
