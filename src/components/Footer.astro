@@ -1,5 +1,5 @@
 ---
-import { FOOTER_LINKS } from "@consts/FooterLinks";
+import { LINKS } from "@consts/Links";
 ---
 
 <footer
@@ -8,7 +8,7 @@ import { FOOTER_LINKS } from "@consts/FooterLinks";
   <img src="/logo.svg" alt="Blogr's logo" />
   <div class="flex flex-col gap-10">
     {
-      FOOTER_LINKS.map(({ links, title }) => (
+      LINKS.map(({ links, title }) => (
         <div
           class="flex flex-col gap-6 items-center justify-center"
           id={title.toLowerCase()}
