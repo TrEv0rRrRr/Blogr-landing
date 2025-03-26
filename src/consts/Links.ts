@@ -1,4 +1,4 @@
-export const FOOTER_LINKS = [
+export const LINKS = [
   {
     title: "Product",
     links: ["Overview", "Pricing", "Marketplace", "Features", "Integrations"],
