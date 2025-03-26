@@ -4,7 +4,7 @@ import { SECTIONS } from "@consts/Sections";
 const bgImage = "url(/bg-images/bg-pattern-circles.svg)";
 const gradientColors =
   "linear-gradient(to bottom, hsl(237, 17%, 21%), hsl(237, 23%, 32%))";
-const bgStyles = `background-image: ${bgImage}, ${gradientColors}; background-size: 150% auto; background-position: top 100% 100%;`;
+const bgStyles = `background-image: ${bgImage}, ${gradientColors}; background-size: 163% auto; background-position: center -250px, center;`;
 ---
 
 <main class="flex flex-col gap-8 items-center">
@@ -18,7 +18,7 @@ const bgStyles = `background-image: ${bgImage}, ${gradientColors}; background-si
           class:list={[
             "flex flex-col relative z-30",
             {
-              "gap-0 bg-linear-to-b from-Gradient-Body-from to-Gradient-Body-to rounded-bl-7xl rounded-tr-7xl py-32 mt-32 bg-center bg-cover bg-no-repeat":
+              "gap-0 rounded-bl-7xl rounded-tr-7xl py-32 mt-32 bg-center bg-cover bg-no-repeat":
                 index === 1,
               "gap-10 bg-none": index !== 1,
             },
