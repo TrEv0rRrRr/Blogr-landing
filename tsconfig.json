@@ -24,5 +24,7 @@
         "src/consts/*"
       ]
     },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }
