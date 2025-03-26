@@ -1,4 +1,5 @@
 import ArrowIcon from "@assets/icon-arrow.svg";
+import Button from "@components/Button";
 import { LINKS } from "@consts/Links";
 import { useState } from "react";
 
@@ -65,9 +66,11 @@ const Menu = () => {
 
       <div className="flex flex-col items-center justify-center gap-5 border-t border-t-Footer-link/50 w-70 pt-7 pb-2">
         <button className="cursor-pointer text-Footer-background">Login</button>
-        <button className="cursor-pointer text-Footer-background">
-          Sign Up
-        </button>
+        <Button
+          colorStyles="bg-linear-to-r from-Gradient-Header-from to-Gradient-Header-to"
+          text="Sign Up"
+          differentPadding
+        />
       </div>
     </div>
   );
