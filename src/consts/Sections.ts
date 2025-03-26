@@ -3,6 +3,7 @@ export const SECTIONS = [
     imgs: {
       mobile: "illustations/illustration-editor-mobile.svg",
       desktop: "illustations/illustration-editor-desktop.svg",
+      alt: "Illustration of a graph and visual content representing the editor's extensibility",
     },
     articles: [
       {
@@ -18,7 +19,8 @@ export const SECTIONS = [
     ],
   },
   {
-    img: "illustations/illustration-phones.svg",
+    image: "illustations/illustration-phones.svg",
+    alt: "Two smartphones showcasing Blogr's responsive design and robust infrastructure",
     articles: [
       {
         heading: "State of the Art Infrastructure",
@@ -31,6 +33,7 @@ export const SECTIONS = [
     imgs: {
       mobile: "illustations/illustration-laptop-mobile.svg",
       desktop: "illustations/illustration-laptop-desktop.svg",
+      alt: "Laptop screen displaying a website layout representing Blogr's simple and powerful tooling",
     },
     articles: [
       {

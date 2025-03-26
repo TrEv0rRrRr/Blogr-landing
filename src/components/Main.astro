@@ -1,8 +1,80 @@
 ---
-import Section from "./MainComponents/Section.astro";
 import { SECTIONS } from "@consts/Sections";
+
+const bgImage = "url(/bg-images/bg-pattern-circles.svg)";
+const gradientColors =
+  "linear-gradient(to bottom, hsl(237, 17%, 21%), hsl(237, 23%, 32%))";
+const bgStyles = `background-image: ${bgImage}, ${gradientColors}; background-size: 150% auto; background-position: top 100% 100%;`;
 ---
 
-<main>
-  <h2>Designed for the future</h2>
+<main class="flex flex-col gap-8 items-center">
+  <h2 class="text-Primary-headings font-semibold text-2xl">
+    Designed for the future
+  </h2>
+  <div class="flex flex-col gap-20 z-10">
+    {
+      SECTIONS.map(({ articles, image, imgs, alt }, index) => (
+        <section
+          class:list={[
+            "flex flex-col relative z-30",
+            {
+              "gap-0 bg-linear-to-b from-Gradient-Body-from to-Gradient-Body-to rounded-bl-7xl rounded-tr-7xl py-32 mt-32 bg-center bg-cover bg-no-repeat":
+                index === 1,
+              "gap-10 bg-none": index !== 1,
+            },
+          ]}
+          id={`${index}`}
+          style={`${index === 1 && bgStyles}`}
+        >
+          <div>
+            {imgs ? (
+              <picture>
+                <source srcset={imgs.desktop} media="(min-width: 768px)" />
+                <img src={imgs.mobile} alt={imgs.alt} />
+              </picture>
+            ) : (
+              <img class="absolute -top-40 z-10" src={image} alt={alt} />
+            )}
+          </div>
+          <div class="flex flex-col gap-8 z-10">
+            {articles.map(({ heading, description }) => (
+              <article
+                class:list={[
+                  "flex flex-col gap-5 text-center",
+                  {
+                    "mt-32": index === 1,
+                    "mt-0": index !== 1,
+                  },
+                ]}
+              >
+                <h3
+                  class:list={[
+                    "font-semibold px-16",
+                    {
+                      "text-white text-[2.1rem] leading-[1.3333]": index === 1,
+                      "text-Primary-headings text-2xl text-[1.65rem] leading-[1.3333]":
+                        index !== 1,
+                    },
+                  ]}
+                >
+                  {heading}
+                </h3>
+                <p
+                  class:list={[
+                    "leading-7",
+                    {
+                      "text-white/80 px-12": index === 1,
+                      "text-Primary-paragraphs px-11": index !== 1,
+                    },
+                  ]}
+                >
+                  {description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </section>
+      ))
+    }
+  </div>
 </main>
