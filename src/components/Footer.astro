@@ -1,5 +1,33 @@
 ---
-
+import { FOOTER_LINKS } from "@consts/FooterLinks";
 ---
 
-<footer class="font-footer">Footer</footer>
+<footer
+  class="font-footer bg-Footer-background flex flex-col items-center justify-center py-20 gap-20 rounded-tr-7xl"
+>
+  <img src="/logo.svg" alt="Blogr's logo" />
+  <div class="flex flex-col gap-10">
+    {
+      FOOTER_LINKS.map(({ links, title }) => (
+        <div
+          class="flex flex-col gap-6 items-center justify-center"
+          id={title.toLowerCase()}
+        >
+          <span class="text-Footer-title font-medium">{title}</span>
+          <ul class="flex flex-col items-center justify-center gap-2 text-Footer-link">
+            {links.map((link) => (
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-Footer-title/90 hover:underline transition-all duration-200"
+                >
+                  {link}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+</footer>
