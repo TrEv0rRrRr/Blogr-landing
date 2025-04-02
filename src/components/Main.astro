@@ -1,10 +1,5 @@
 ---
 import { SECTIONS } from "@consts/Sections";
-
-const bgImage = "url(/bg-images/bg-pattern-circles.svg)";
-const gradientColors =
-  "linear-gradient(to bottom, hsl(237, 17%, 21%), hsl(237, 23%, 32%))";
-const bgStyles = `background-image: ${bgImage}, ${gradientColors}; background-size: 163% auto; background-position: center -245px, center;`;
 ---
 
 <main class="flex flex-col gap-8 items-center">
@@ -18,22 +13,25 @@ const bgStyles = `background-image: ${bgImage}, ${gradientColors}; background-si
           class:list={[
             "flex flex-col relative z-30",
             {
-              "gap-0 rounded-bl-7xl rounded-tr-7xl py-32 mt-32 bg-center bg-cover bg-no-repeat":
+              "section-bg gap-0 rounded-bl-7xl rounded-tr-7xl py-32 mt-32 bg-center bg-cover bg-no-repeat":
                 index === 1,
-              "gap-10 bg-none": index !== 1,
+              "gap-10 bg-none items-center": index !== 1,
             },
           ]}
           id={`${index}`}
-          style={`${index === 1 && bgStyles}`}
         >
           <div>
             {imgs ? (
               <picture>
-                <source srcset={imgs.desktop} media="(min-width: 768px)" />
+                <source srcset={imgs.desktop} media="(min-width: 1280px)" />
                 <img src={imgs.mobile} alt={imgs.alt} />
               </picture>
             ) : (
-              <img class="absolute -top-40 z-10" src={image} alt={alt} />
+              <img
+                class="absolute -top-40 z-10 md:-top-60 md:left-30"
+                src={image}
+                alt={alt}
+              />
             )}
           </div>
           <div class="flex flex-col gap-8 z-10">
@@ -78,3 +76,50 @@ const bgStyles = `background-image: ${bgImage}, ${gradientColors}; background-si
     }
   </div>
 </main>
+
+<style>
+  .section-bg {
+    background-image: url(/bg-images/bg-pattern-circles.svg),
+      linear-gradient(
+        to bottom,
+        var(--color-Gradient-Body-from),
+        var(--color-Gradient-Body-to)
+      );
+    background-size: 163% auto;
+    background-position:
+      center -245px,
+      center;
+  }
+
+  /* Tablet styles */
+  @media screen and (min-width: 768px) {
+    .section-bg {
+      background-image: url(/bg-images/bg-pattern-circles.svg),
+        linear-gradient(
+          to bottom,
+          var(--color-Gradient-Body-from),
+          var(--color-Gradient-Body-to)
+        );
+      background-size: 103% auto;
+      background-position:
+        center -345px,
+        center;
+    }
+  }
+
+  /* Desktop styles */
+  @media screen and (min-width: 1280px) {
+    .section-bg {
+      background-image: url(/bg-images/bg-pattern-circles.svg),
+        linear-gradient(
+          to bottom,
+          var(--color-Gradient-Body-from),
+          var(--color-Gradient-Body-to)
+        );
+      background-size: 163% auto;
+      background-position:
+        center -245px,
+        center;
+    }
+  }
+</style>
