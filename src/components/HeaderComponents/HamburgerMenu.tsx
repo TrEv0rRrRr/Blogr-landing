@@ -23,7 +23,7 @@ const HamburgerMenu = () => {
           className="object-contain w-20 h-20"
         />
         <nav className="flex">
-          <button className="block md:hidden" onClick={handleClick}>
+          <button className="block xl:hidden" onClick={handleClick}>
             <img
               src={imgSrc}
               alt={`${
@@ -33,7 +33,7 @@ const HamburgerMenu = () => {
           </button>
           <div
             className={`
-            ${isOpen ? "flex relative" : "hidden md:flex"}
+            ${isOpen ? "flex relative" : "hidden xl:flex"}
             `}
           >
             <Menu />

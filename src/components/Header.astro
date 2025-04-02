@@ -1,21 +1,18 @@
 ---
 import HamburgerMenu from "./HeaderComponents/HamburgerMenu";
 import Button from "./Button";
-
-const mobilePattern = "url(/bg-images/bg-pattern-intro-mobile.svg)";
-const gradientColors =
-  "linear-gradient(to bottom, hsl(13, 100%, 72%), hsl(353, 100%, 62%))";
 ---
 
 <header
   class="flex flex-col justify-center text-white gap-20 pt-5 px-8 pb-32 rounded-bl-7xl bg-no-repeat bg-center bg-cover"
-  style={`background-image: ${mobilePattern}, ${gradientColors}; background-size: 330%; background-position: -320px -290px, center;`}
 >
   <HamburgerMenu client:visible />
   <div class="flex flex-col items-center justify-center gap-10">
     <div class="flex flex-col text-center gap-4">
-      <h1 class="font-semibold text-3xl px-6">A modern publishing platform</h1>
-      <p class="font-light px-10">
+      <h1 class="font-semibold text-3xl px-6 md:text-[2.6rem]">
+        A modern publishing platform
+      </h1>
+      <p class="font-light px-10 md:text-[1.2rem]">
         Grow your audience and build your online brand
       </p>
     </div>
@@ -33,16 +30,48 @@ const gradientColors =
 </header>
 
 <style>
-  @media (min-width: 1280px) {
+  header {
+    background-image: url(/bg-images/bg-pattern-intro-mobile.svg),
+      linear-gradient(
+        to bottom,
+        var(--color-Gradient-Header-from),
+        var(--color-Gradient-Header-to)
+      );
+    background-size: 330%;
+    background-position:
+      -290px -200px,
+      center;
+  }
+
+  /* Tablet styles */
+  @media screen and (min-width: 768px) {
     header {
-      background-image: linear-gradient(
-          to bottom,
+      background-image: url(/bg-images/bg-pattern-intro-mobile.svg),
+        linear-gradient(
+          to right,
           var(--color-Gradient-Header-from),
           var(--color-Gradient-Header-to)
-        ),
-        url(/bg-images/bg-pattern-intro-desktop.svg);
-      background-size: 320%, cover;
-      background-position: center, center;
+        );
+      background-size: 240%;
+      background-position:
+        -293px -700px,
+        center;
+    }
+  }
+
+  /* Desktop styles */
+  @media screen and (min-width: 1280px) {
+    header {
+      background-image: url(/bg-images/bg-pattern-intro-desktop.svg),
+        linear-gradient(
+          to right,
+          var(--color-Gradient-Header-from),
+          var(--color-Gradient-Header-to)
+        );
+      background-size: 240%;
+      background-position:
+        -293px -700px,
+        center;
     }
   }
 </style>

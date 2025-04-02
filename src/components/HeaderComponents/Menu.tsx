@@ -15,19 +15,19 @@ const Menu = () => {
   return (
     <div
       className="flex flex-col items-center justify-center gap-8 
-      bg-white absolute -left-41 -translate-x-1/2 
-      px-20 py-8 top-15 rounded-md w-80.5 z-50 shadow-2xl"
+      bg-white absolute -left-36.5 -translate-x-1/2 
+      px-20 py-8 top-15 rounded-md w-80.5 z-50 shadow-2xl xl:static xl:p-0 xl:translate-0 xl:bg-transparent xl:flex-row xl:shadow-none xl:w-auto"
     >
       <div className="flex flex-col gap-4">
         {LINKS.map(({ links, title }, index) => {
           const isIndex = isOpen && activeIndex === index;
           return (
             <div
-              className="flex flex-col gap-4 items-center justify-center"
+              className="flex flex-col gap-4 items-center justify-center xl:gap-0 xl:items-start"
               key={`${title.toLowerCase()}-${index}`}
             >
               <button
-                className="text-Menu-text hover:text-neutral-900 font-medium flex items-center gap-3 cursor-pointer text-[1.1rem]"
+                className="text-Menu-text hover:text-neutral-900 font-medium flex items-center gap-3 cursor-pointer text-[1.1rem] xl:text-white"
                 onClick={() => handleClick(index)}
                 role="button"
                 aria-expanded={isIndex}
@@ -47,7 +47,7 @@ const Menu = () => {
               <ul
                 className={`gap-2 text-Menu-text bg-Footer-link/25 w-70 py-0
                 rounded-md overflow-hidden transition-all duration-300 ease-in-out
-                origin-top ${
+                origin-top xl:w-auto ${
                   isIndex
                     ? "max-h-96 opacity-100 py-6 flex flex-col items-center justify-center"
                     : "max-h-0 opacity-0 flex flex-col items-center justify-center"
@@ -70,7 +70,7 @@ const Menu = () => {
         })}
       </div>
 
-      <div className="flex flex-col items-center justify-center gap-5 border-t border-t-Footer-link/50 w-70 pt-7 pb-2">
+      <div className="flex flex-col items-center justify-center gap-5 border-t border-t-Footer-link/50 w-70 pt-7 pb-2 xl:flex-row xl:p-0">
         <button className="cursor-pointer text-Menu-text hover:hover:text-neutral-900 text-[1.15rem]">
           Login
         </button>
